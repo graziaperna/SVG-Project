@@ -41,7 +41,7 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Terreno
+  - name: Tilemap
     uniqueID: 2620846201
     locked: 0
   - name: Personaggio
