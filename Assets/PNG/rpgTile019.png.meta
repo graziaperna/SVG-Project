@@ -68,10 +68,12 @@ TextureImporter:
     externalNormalMap: 0
     heightScale: 0.25
     normalMapFilter: 0
+    flipGreenChannel: 0
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -110,6 +112,7 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
+  swizzle: 50462976
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -496,9 +499,25 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      rpgTile019_7: -6265217571813654269
+      rpgTile019_9: 7758362151040930514
+      rpgTile019_14: -6322025397483439124
+      rpgTile019_4: -1191755367112660870
+      rpgTile019_1: 1506408307403634047
+      rpgTile019_0: -5054690949724106570
+      rpgTile019_6: 5627015531060646343
+      rpgTile019_13: -3857806986557261815
+      rpgTile019_12: -8318175029783912746
+      rpgTile019_2: 6184811384180530490
+      rpgTile019_11: 3793475013198727484
+      rpgTile019_3: -8339232419298073031
+      rpgTile019_10: 637435785913461606
+      rpgTile019_8: 8262770742971850272
+      rpgTile019_15: -6130977945970319155
+      rpgTile019_5: 4718060321104987674
   spritePackingTag: 
   pSDRemoveMatte: 0
-  pSDShowRemoveMatteOption: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 
