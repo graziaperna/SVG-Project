@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 7666112948915142532}
   - component: {fileID: 8223606790475009909}
-  - component: {fileID: 8142524733192364955}
   - component: {fileID: 4730461299040551927}
   m_Layer: 0
   m_Name: lavanda
@@ -86,19 +85,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &8142524733192364955
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3553172835685925788}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0e26012c438a743459db92fd8b48bcde, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  name: Lavanda
 --- !u!70 &4730461299040551927
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
