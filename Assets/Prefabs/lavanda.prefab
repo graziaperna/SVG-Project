@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 6969121808825542746}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
+  m_LocalScale: {x: 0.01, y: 0.01, z: 0.0001}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
@@ -54,7 +54,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 40a08077779b14b4e98fbaac4ac577dc, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -112,7 +112,7 @@ MonoBehaviour:
     maxDepth: 0
     minNormalAngle: 0
     maxNormalAngle: 0
-  Inventory: {fileID: 8680332995691123873, guid: c8ff40ec39b7ffb42a9bec6ff2ef62b1, type: 3}
+  Inventory: {fileID: 0}
   slot: {fileID: 3368288272056216623, guid: ef96ca0d605b63a439fbcd596950626c, type: 3}
 --- !u!61 &6969121808825542756
 BoxCollider2D:
