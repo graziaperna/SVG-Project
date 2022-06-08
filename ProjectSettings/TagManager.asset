@@ -50,3 +50,6 @@ TagManager:
   - name: oggetti
     uniqueID: 2530411627
     locked: 0
+  - name: casa
+    uniqueID: 3670585683
+    locked: 0
