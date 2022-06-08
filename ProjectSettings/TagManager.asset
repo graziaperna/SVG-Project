@@ -38,9 +38,6 @@ TagManager:
   - 
   - 
   m_SortingLayers:
-  - name: buildings
-    uniqueID: 4223303417
-    locked: 0
   - name: floor
     uniqueID: 2620846201
     locked: 0
@@ -49,4 +46,7 @@ TagManager:
     locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: oggetti
+    uniqueID: 2530411627
     locked: 0
