@@ -41,6 +41,9 @@ TagManager:
   - name: floor
     uniqueID: 2620846201
     locked: 0
+  - name: ponte
+    uniqueID: 3175424407
+    locked: 0
   - name: aren
     uniqueID: 1594795057
     locked: 0
