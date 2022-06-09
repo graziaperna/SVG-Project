@@ -4971,6 +4971,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7630693399910033565, guid: 1ace5441c07916b48b79f62974c44643, type: 3}
+      propertyPath: m_SortingLayer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7630693399910033565, guid: 1ace5441c07916b48b79f62974c44643, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8856389021755705177, guid: 1ace5441c07916b48b79f62974c44643, type: 3}
       propertyPath: m_Name
       value: sedia1
