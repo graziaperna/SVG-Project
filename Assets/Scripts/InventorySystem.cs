@@ -13,7 +13,6 @@ public class InventorySystem : MonoBehaviour
     private Collider2D[] hits = new Collider2D[10];
     public GameObject Inventory;
     private bool[] empty = new bool[11];
-    int index = 0;
     private Vector3 scaleChange;
     public GameObject slot;
 
