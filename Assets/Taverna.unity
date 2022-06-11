@@ -128,6 +128,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 3575582061133442839, guid: 44a701a93d310f147bb0970293105655, type: 3}
@@ -195,12 +196,14 @@ PrefabInstance:
       value: collidertaverna1 (8)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 44a701a93d310f147bb0970293105655, type: 3}
 --- !u!1001 &85331222
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 3575582061133442839, guid: 44a701a93d310f147bb0970293105655, type: 3}
@@ -268,6 +271,7 @@ PrefabInstance:
       value: collidertaverna1 (10)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 44a701a93d310f147bb0970293105655, type: 3}
 --- !u!1 &159523612
 GameObject:
@@ -358,6 +362,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 615631725542477505, guid: 539d3a5aa3df98043a6fa4ef3f4af5e6, type: 3}
@@ -417,12 +422,14 @@ PrefabInstance:
       value: -0.13833141
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 539d3a5aa3df98043a6fa4ef3f4af5e6, type: 3}
 --- !u!1001 &243789042
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 615631725542477505, guid: 539d3a5aa3df98043a6fa4ef3f4af5e6, type: 3}
@@ -482,12 +489,14 @@ PrefabInstance:
       value: -0.13833141
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 539d3a5aa3df98043a6fa4ef3f4af5e6, type: 3}
 --- !u!1001 &261275209
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 3575582061133442839, guid: 44a701a93d310f147bb0970293105655, type: 3}
@@ -555,12 +564,14 @@ PrefabInstance:
       value: collidertaverna1 (9)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 44a701a93d310f147bb0970293105655, type: 3}
 --- !u!1001 &272055339
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 615631725542477505, guid: 539d3a5aa3df98043a6fa4ef3f4af5e6, type: 3}
@@ -620,12 +631,14 @@ PrefabInstance:
       value: -0.13833141
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 539d3a5aa3df98043a6fa4ef3f4af5e6, type: 3}
 --- !u!1001 &282189798
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 3575582061133442839, guid: 44a701a93d310f147bb0970293105655, type: 3}
@@ -693,12 +706,14 @@ PrefabInstance:
       value: collidertaverna1 (6)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 44a701a93d310f147bb0970293105655, type: 3}
 --- !u!1001 &622463214
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 3575582061133442839, guid: 44a701a93d310f147bb0970293105655, type: 3}
@@ -766,6 +781,7 @@ PrefabInstance:
       value: collidertaverna1 (7)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 44a701a93d310f147bb0970293105655, type: 3}
 --- !u!1 &634916349
 GameObject:
@@ -901,6 +917,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 7495979232166552842, guid: 873bc09e4c965dd469c98ffbbfa31170, type: 3}
@@ -913,11 +930,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7495979232166552843, guid: 873bc09e4c965dd469c98ffbbfa31170, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.361
+      value: 0.253
       objectReference: {fileID: 0}
     - target: {fileID: 7495979232166552843, guid: 873bc09e4c965dd469c98ffbbfa31170, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.665
+      value: -1.545
       objectReference: {fileID: 0}
     - target: {fileID: 7495979232166552843, guid: 873bc09e4c965dd469c98ffbbfa31170, type: 3}
       propertyPath: m_LocalPosition.z
@@ -960,6 +977,7 @@ PrefabInstance:
       value: -624381613
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 873bc09e4c965dd469c98ffbbfa31170, type: 3}
 --- !u!1 &1321569348
 GameObject:
@@ -1550,6 +1568,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 615631725542477505, guid: 539d3a5aa3df98043a6fa4ef3f4af5e6, type: 3}
@@ -1609,12 +1628,14 @@ PrefabInstance:
       value: -0.13833141
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 539d3a5aa3df98043a6fa4ef3f4af5e6, type: 3}
 --- !u!1001 &237249404409432263
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 615631725542477505, guid: 539d3a5aa3df98043a6fa4ef3f4af5e6, type: 3}
@@ -1666,12 +1687,73 @@ PrefabInstance:
       value: collidertaverna1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 539d3a5aa3df98043a6fa4ef3f4af5e6, type: 3}
+--- !u!1001 &2894230590082585411
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 2
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2894230590495991260, guid: ac25afef3790bbc48bd0b15859949e37, type: 3}
+      propertyPath: m_Name
+      value: collideruscita
+      objectReference: {fileID: 0}
+    - target: {fileID: 2894230590495991266, guid: ac25afef3790bbc48bd0b15859949e37, type: 3}
+      propertyPath: m_RootOrder
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 2894230590495991266, guid: ac25afef3790bbc48bd0b15859949e37, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.197
+      objectReference: {fileID: 0}
+    - target: {fileID: 2894230590495991266, guid: ac25afef3790bbc48bd0b15859949e37, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.433
+      objectReference: {fileID: 0}
+    - target: {fileID: 2894230590495991266, guid: ac25afef3790bbc48bd0b15859949e37, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.1759632
+      objectReference: {fileID: 0}
+    - target: {fileID: 2894230590495991266, guid: ac25afef3790bbc48bd0b15859949e37, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2894230590495991266, guid: ac25afef3790bbc48bd0b15859949e37, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2894230590495991266, guid: ac25afef3790bbc48bd0b15859949e37, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2894230590495991266, guid: ac25afef3790bbc48bd0b15859949e37, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2894230590495991266, guid: ac25afef3790bbc48bd0b15859949e37, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2894230590495991266, guid: ac25afef3790bbc48bd0b15859949e37, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2894230590495991266, guid: ac25afef3790bbc48bd0b15859949e37, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_AddedGameObjects: []
+  m_SourcePrefab: {fileID: 100100000, guid: ac25afef3790bbc48bd0b15859949e37, type: 3}
 --- !u!1001 &4416275809081858932
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 3575582061133442839, guid: 44a701a93d310f147bb0970293105655, type: 3}
@@ -1723,4 +1805,5 @@ PrefabInstance:
       value: collidertaverna1 (5)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 44a701a93d310f147bb0970293105655, type: 3}
