@@ -8,36 +8,24 @@ using UnityEngine.UI;
 
 public class cannotPass : MonoBehaviour
 {
-    public ContactFilter2D filter;
-    private BoxCollider2D boxCollider;
-    private Collider2D[] hits = new Collider2D[10];
     public GameObject Text;
     public GameObject Panel;
 
-    protected virtual void Start()
+    void OnTriggerEnter2D(Collider2D other)
     {
-        boxCollider = GetComponent<BoxCollider2D>();
 
+        if (other.name == "aren")
+        {
+            showMessage();
+        }
     }
 
-    protected virtual void Update()
+    void OnTriggerExit2D(Collider2D other)
     {
-        //Collision work
-        boxCollider.OverlapCollider(filter, hits);
 
-        for (int i = 0; i < hits.Length; i++)
+        if (other.name == "aren")
         {
-
-            if (hits[i] == null)
-            {
-                continue;
-            }
-
-            showMessage();
-
-
-
-            hits[i] = null;
+           hideMessage();
         }
     }
 
@@ -45,6 +33,12 @@ public class cannotPass : MonoBehaviour
     {
         Panel.SetActive(true);
         Text.SetActive(true);
+    }
+
+    protected void hideMessage()
+    {
+        Panel.SetActive(false);
+        Text.SetActive(false);
     }
 
 
