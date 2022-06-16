@@ -8,7 +8,7 @@ using UnityEngine.SceneManagement;
 public class CambioScena : MonoBehaviour
 {
     public int SceneNumber;
-    private bool passed = false;
+    
     void OnTriggerEnter2D(Collider2D other)
     {
          
