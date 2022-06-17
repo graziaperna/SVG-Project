@@ -7,11 +7,14 @@ public class MoveTo : MonoBehaviour
 {
     private Vector3 destinationPosition;
     private Vector3 movement;
+    public bool firstMove = false;
+    public bool speak = false;
     public GameObject destination;
     private Rigidbody player;
     public bool move = false;
     public Animator animator;
     float speed = 1f;
+    public Collider2D  NPC_collision;
     public GameObject dialogueBox;
     public GameObject conversation;
     private int dialogue = 0;
@@ -21,22 +24,29 @@ public class MoveTo : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        destination.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
-        destination.GetComponent<Animator>().enabled = false;
+        if (firstMove)
+        {
+            destination.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
+            destination.GetComponent<Animator>().enabled = false;
 
-        destinationPosition = destination.transform.position;
-        destinationPosition.x = destinationPosition.x + 0.2f;
-        movement = new Vector3(-1,0,0);
-        move = true;
-        continueDialogueButton.onClick.AddListener(TaskOnClick);
+            destinationPosition = destination.transform.position;
+            destinationPosition.x = destinationPosition.x + 0.2f;
+            movement = new Vector3(-1, 0, 0);
+            continueDialogueButton.onClick.AddListener(TaskOnClick);
+        }
+        
 
     }
 
     void Update() {
         
-        if(move) {
+        if(move||firstMove) {
         Move();
 
+        }
+        else if (speak)
+        {
+            Speak();
         }
         
     }
@@ -47,7 +57,7 @@ public class MoveTo : MonoBehaviour
      transform.position = Vector3.MoveTowards(transform.position, destinationPosition, speed* Time.deltaTime);
      animator.SetFloat("Horizontal", movement.x);
      animator.SetFloat("Vertical", movement.y);
-        animator.SetFloat("Speed",  transform.position.sqrMagnitude);
+     animator.SetFloat("Speed",  transform.position.sqrMagnitude);
         
         destination.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
         destination.GetComponent<Animator>().enabled = false;
@@ -67,6 +77,44 @@ public class MoveTo : MonoBehaviour
 
     }
 
+    void Speak()
+    {
+
+        if (transform.position == destinationPosition)
+        {
+            destination.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
+            destination.GetComponent<Animator>().enabled = false;
+
+            if (dialogue < conversation.transform.childCount)
+            {
+                child = conversation.transform.GetChild(dialogue);
+            }
+            animator.SetFloat("Speed", 0);
+            dialogueBox.SetActive(true);
+            conversation.SetActive(true);
+            Conversation();
+
+        }
+        
+    }
+
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+
+        if (other.name == NPC_collision.name)
+        {
+            if (dialogue < conversation.transform.childCount)
+            {
+                child = conversation.transform.GetChild(dialogue);
+            }
+            animator.SetFloat("Speed", 0);
+            dialogueBox.SetActive(true);
+            conversation.SetActive(true);
+            Conversation();
+        }
+    }
+
     void TaskOnClick()
     {
 
@@ -78,6 +126,7 @@ public class MoveTo : MonoBehaviour
         if (dialogue == conversation.transform.childCount)
         {
             move = false;
+            firstMove = false;
             destination.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
             destination.GetComponent<Animator>().enabled = true;
             dialogueBox.SetActive(false);
