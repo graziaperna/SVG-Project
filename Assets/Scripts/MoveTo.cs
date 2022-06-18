@@ -7,10 +7,10 @@ public class MoveTo : MonoBehaviour
     Interaction interaction;
     public GameObject objectEvent;
     public GameObject colliderEnterTo;
+    public GameObject player;
     public Animator animator;
     private Vector3 destinationPosition;
     private Vector3 movement = new Vector3(0, 1, 0);
-    private bool readyToStartEvent = false;
     private float speed = 0.5f;
 
     // Update is called once per frame
@@ -35,6 +35,8 @@ public class MoveTo : MonoBehaviour
         if (transform.position == destinationPosition) {
             Destroy(objectEvent);
             interaction.finish = false;
+            player.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
+            player.GetComponent<Animator>().enabled = true;
         }
         
     }

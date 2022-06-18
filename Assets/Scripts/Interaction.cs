@@ -128,8 +128,6 @@ public class Interaction : MonoBehaviour
         {
             move = false;
             firstMove = false;
-            destination.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
-            destination.GetComponent<Animator>().enabled = true;
             dialogueBox.SetActive(false);
             conversation.SetActive(false);
             finish = true;
