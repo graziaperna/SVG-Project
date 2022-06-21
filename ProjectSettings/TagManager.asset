@@ -45,15 +45,18 @@ TagManager:
   - name: ponte
     uniqueID: 3175424407
     locked: 0
-  - name: aren
+  - name: oggetti
+    uniqueID: 2530411627
+    locked: 0
+  - name: personaggi
     uniqueID: 1594795057
     locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: oggetti
-    uniqueID: 2530411627
-    locked: 0
   - name: casa
     uniqueID: 3670585683
+    locked: 0
+  - name: tavolo
+    uniqueID: 2912149053
     locked: 0
