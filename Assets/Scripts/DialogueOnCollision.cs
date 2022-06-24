@@ -12,8 +12,10 @@ public class DialogueOnCollision : MonoBehaviour
     private int dialogue = 0;
     private Rigidbody2D player;
     private GameObject esben;
-    private SpriteRenderer sprite;
-    private Collider2D collider;
+    private GameObject fiaccola;
+    private SpriteRenderer spriteEsben;
+    private Collider2D colliderEsben;
+    private Collider2D colliderFiaccola;
     public bool interacted = false;
 
     void OnTriggerEnter2D(Collider2D other)
@@ -35,6 +37,19 @@ public class DialogueOnCollision : MonoBehaviour
             
             Conversation();
             interacted = true;
+
+        }
+
+        if(this.name == "esben2") {
+            GameObject.Find("colliderToEnter(Taverna)").GetComponent<BoxCollider2D>().enabled = true;
+            if(GameObject.Find("fiaccola") != null) { 
+                GameObject.Find("fiaccola").GetComponent<BoxCollider2D>().enabled = true;
+            }
+            
+        }
+        if(this.name == "altare") {     
+            GameObject.Find("collideruscita").GetComponent<BoxCollider2D>().enabled = true;
+            GameObject.Find("colliderToEnter(Tempio)").GetComponent<BoxCollider2D>().enabled = false;
 
         }
     } 
@@ -59,11 +74,12 @@ public class DialogueOnCollision : MonoBehaviour
             if(SceneManager.GetActiveScene().name == "Tempio") {
 
                 esben = GameObject.Find("esben2");
-                sprite = esben.GetComponent<SpriteRenderer>();
-                sprite.enabled = true;
+                spriteEsben = esben.GetComponent<SpriteRenderer>();
+                spriteEsben.enabled = true;
 
-                collider = esben.GetComponent<Collider2D>();
-                collider.enabled = true;
+                colliderEsben = esben.GetComponent<BoxCollider2D>();
+                colliderEsben.enabled = true; 
+               
             }
             
         }
