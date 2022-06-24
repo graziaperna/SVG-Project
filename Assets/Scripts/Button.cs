@@ -5,6 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class Button : MonoBehaviour
 {
+    CambioScena scena;
+    public GameObject objectEvent;
+
     // Start is called before the first frame update
     public void Play()
     {
@@ -23,6 +26,8 @@ public class Button : MonoBehaviour
     }
     public void GoOn()
     {
+        scena = objectEvent.GetComponent<CambioScena>();
+        scena.setChanged(true);
         SceneManager.LoadScene(2);
     }
 }
