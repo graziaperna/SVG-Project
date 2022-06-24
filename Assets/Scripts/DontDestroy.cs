@@ -5,12 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class DontDestroy : MonoBehaviour
 {
-    public AudioClip[] clip;
     private int nclip = 0;
+    private GameObject musicObj;
+    MusicManager musicMan;
     private GameObject music;
-    CambioScena scena;
-    public GameObject objectEvent;
-
+    
 
     void Start()
     {
@@ -20,8 +19,10 @@ public class DontDestroy : MonoBehaviour
     void Awake()
     {
         GameObject[] objs = GameObject.FindGameObjectsWithTag("aren");
+       
         music = GameObject.FindWithTag("music");
-        scena = objectEvent.GetComponent<CambioScena>();
+
+        musicMan = music.GetComponent<MusicManager>();
 
         if (objs.Length > 1)
         {
@@ -33,27 +34,22 @@ public class DontDestroy : MonoBehaviour
 
     void Update()
     {
-        if(SceneManager.GetActiveScene().name == "SampleScene" && scena.changed == true)
+        if (musicMan.musicToChange)
         {
-        nclip = 0;
-        changeMusic();
-        }
-        else if (SceneManager.GetActiveScene().name == "Tempio" && scena.changed == true)
-        {
-            nclip = 1;
-            changeMusic();
-        }
-        else if (SceneManager.GetActiveScene().name == "Casa Baba" && scena.changed == true)
-        {
-            nclip = 2;
-            changeMusic();
+            if (SceneManager.GetActiveScene().name == "SampleScene")
+            {
+                musicMan.changeMusic(0);
+            }
+            else if (SceneManager.GetActiveScene().name == "Tempio")
+            {
+                musicMan.changeMusic(1);
+            }
+            else if (SceneManager.GetActiveScene().name == "Casa Baba")
+            {
+                musicMan.changeMusic(2);
+            }
         }
     }
 
-    void changeMusic()
-    {
-            music.GetComponent<AudioSource>().clip = clip[nclip];
-            music.GetComponent<AudioSource>().GetComponent<AudioSource>().Play();
-            scena.setChanged(false);
-    }
+    
 }
