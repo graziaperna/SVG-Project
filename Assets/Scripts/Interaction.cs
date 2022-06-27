@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Interaction : MonoBehaviour
 {
@@ -10,7 +11,8 @@ public class Interaction : MonoBehaviour
     public bool firstMove = false;
     public bool speak = false;
     public GameObject destination;
-    private Rigidbody player;
+    public GameObject player;
+    public bool finishSpeak = false;
     public bool move = false;
     public Animator animator;
     float speed = 1f;
@@ -42,11 +44,17 @@ public class Interaction : MonoBehaviour
     void Update() {
         
         if(move||firstMove) {
-        Move();
+            Move();
 
         }
-        else if (speak)
+
+        else if (!speak)
         {
+            SetMovement();
+        }
+        else
+        {
+            destinationPosition = destination.transform.position;
             Speak();
         }
         
@@ -81,21 +89,14 @@ public class Interaction : MonoBehaviour
     void Speak()
     {
 
-        if (transform.position == destinationPosition)
-        {
-            destination.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
-            destination.GetComponent<Animator>().enabled = false;
-
             if (dialogue < conversation.transform.childCount)
             {
                 child = conversation.transform.GetChild(dialogue);
             }
-            animator.SetFloat("Speed", 0);
             dialogueBox.SetActive(true);
             conversation.SetActive(true);
             Conversation();
 
-        }
         
     }
 
@@ -105,14 +106,37 @@ public class Interaction : MonoBehaviour
 
         if (other.name == NPC_collision.name)
         {
+            destination.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
+            destination.GetComponent<Animator>().enabled = false;
+            continueDialogueButton.onClick.AddListener(TaskOnClick);
+
             if (dialogue < conversation.transform.childCount)
             {
                 child = conversation.transform.GetChild(dialogue);
             }
-            animator.SetFloat("Speed", 0);
             dialogueBox.SetActive(true);
             conversation.SetActive(true);
             Conversation();
+            speak = true;
+            if (!speak)
+            {
+                animator.SetFloat("Speed", 0);
+            }
+            if (this.name == "esben2")
+            {
+                GameObject.Find("colliderToEnter(Taverna)").GetComponent<BoxCollider2D>().enabled = true;
+                if (GameObject.Find("fiaccola") != null)
+                {
+                    GameObject.Find("fiaccola").GetComponent<BoxCollider2D>().enabled = true;
+                }
+
+            }
+            if (this.name == "altare")
+            {
+                GameObject.Find("collideruscita").GetComponent<BoxCollider2D>().enabled = true;
+                GameObject.Find("colliderToEnter(Tempio)").GetComponent<BoxCollider2D>().enabled = false;
+
+            }
         }
     }
 
@@ -126,14 +150,24 @@ public class Interaction : MonoBehaviour
 
         if (dialogue == conversation.transform.childCount)
         {
+            
             move = false;
-            firstMove = false;
+            speak = false;
             dialogueBox.SetActive(false);
             conversation.SetActive(false);
+            firstMove = false;
             finish = true;
             continueDialogueButton.GetComponent<CanvasGroup>().alpha = 0f;
             continueDialogueButton.GetComponent<CanvasGroup>().interactable = false;
+           
         }
+        
+    }
+
+    void SetMovement()
+    {
+        player.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
+        player.GetComponent<Animator>().enabled = true;
     }
 
     void Conversation () {
@@ -144,6 +178,26 @@ public class Interaction : MonoBehaviour
             continueDialogueButton.GetComponent<CanvasGroup>().alpha = 1f;
             continueDialogueButton.GetComponent<CanvasGroup>().interactable = true;
         } else if(dialogue == 1)
+        {
+            child.GetComponent<CanvasGroup>().alpha = 1f;
+            child.GetComponent<CanvasGroup>().blocksRaycasts = true;
+        }
+        else if (dialogue == 2)
+        {
+            child.GetComponent<CanvasGroup>().alpha = 1f;
+            child.GetComponent<CanvasGroup>().blocksRaycasts = true;
+        }
+        else if (dialogue == 3)
+        {
+            child.GetComponent<CanvasGroup>().alpha = 1f;
+            child.GetComponent<CanvasGroup>().blocksRaycasts = true;
+        }
+        else if (dialogue == 4)
+        {
+            child.GetComponent<CanvasGroup>().alpha = 1f;
+            child.GetComponent<CanvasGroup>().blocksRaycasts = true;
+        }
+        else if (dialogue == 5)
         {
             child.GetComponent<CanvasGroup>().alpha = 1f;
             child.GetComponent<CanvasGroup>().blocksRaycasts = true;

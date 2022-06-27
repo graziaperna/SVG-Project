@@ -52,14 +52,21 @@ public class DialogueOnCollision : MonoBehaviour
             GameObject.Find("colliderToEnter(Tempio)").GetComponent<BoxCollider2D>().enabled = false;
 
         }
-    } 
+    }
 
+    void OnTriggerStay2D(Collider2D other) {
+
+        if (dialogue < conversation.transform.childCount)
+        {
+            child = conversation.transform.GetChild(dialogue);
+        }
+        Conversation();
+    }
 
     void TaskOnClick()
     {
 
         dialogue++;
-
         child.GetComponent<CanvasGroup>().alpha = 0f;
         child.GetComponent<CanvasGroup>().blocksRaycasts = false;
 
@@ -97,10 +104,22 @@ public class DialogueOnCollision : MonoBehaviour
             child.GetComponent<CanvasGroup>().alpha = 1f;
             child.GetComponent<CanvasGroup>().blocksRaycasts = true;
         }
+        else if (dialogue == 2)
+        {
+            child.GetComponent<CanvasGroup>().alpha = 1f;
+            child.GetComponent<CanvasGroup>().blocksRaycasts = true;
+        }
+        else if (dialogue == 3)
+        {
+            child.GetComponent<CanvasGroup>().alpha = 1f;
+            child.GetComponent<CanvasGroup>().blocksRaycasts = true;
+        }
+        else if (dialogue == 4)
+        {
+            child.GetComponent<CanvasGroup>().alpha = 1f;
+            child.GetComponent<CanvasGroup>().blocksRaycasts = true;
+        }
     }
-
-
-
 
   
 }

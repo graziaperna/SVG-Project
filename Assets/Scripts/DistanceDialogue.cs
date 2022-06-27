@@ -59,5 +59,20 @@ public class DistanceDialogue : MonoBehaviour
             child.GetComponent<CanvasGroup>().alpha = 1f;
             child.GetComponent<CanvasGroup>().blocksRaycasts = true;
         }
+        else if (dialogue == 2)
+        {
+            child.GetComponent<CanvasGroup>().alpha = 1f;
+            child.GetComponent<CanvasGroup>().blocksRaycasts = true;
+        }
+        else if (dialogue == 3)
+        {
+            child.GetComponent<CanvasGroup>().alpha = 1f;
+            child.GetComponent<CanvasGroup>().blocksRaycasts = true;
+        }
+        else if (dialogue == 4)
+        {
+            child.GetComponent<CanvasGroup>().alpha = 1f;
+            child.GetComponent<CanvasGroup>().blocksRaycasts = true;
+        }
     }
 }
