@@ -12,7 +12,6 @@ public class Interaction : MonoBehaviour
     public bool speak = false;
     public GameObject destination;
     public GameObject player;
-    public bool finishSpeak = false;
     public bool move = false;
     public Animator animator;
     float speed = 1f;
@@ -47,16 +46,13 @@ public class Interaction : MonoBehaviour
             Move();
 
         }
-
-        else if (!speak)
+        if (speak)
         {
-            SetMovement();
+                destinationPosition = destination.transform.position;
+                Speak();
+            
         }
-        else
-        {
-            destinationPosition = destination.transform.position;
-            Speak();
-        }
+        
         
     }
 
@@ -88,15 +84,16 @@ public class Interaction : MonoBehaviour
 
     void Speak()
     {
-
-            if (dialogue < conversation.transform.childCount)
-            {
-                child = conversation.transform.GetChild(dialogue);
-            }
-            dialogueBox.SetActive(true);
-            conversation.SetActive(true);
+        if (!finish)
+        {
+            child = conversation.transform.GetChild(dialogue);
             Conversation();
-
+        } else
+        {
+            dialogueBox.SetActive(false);
+            conversation.SetActive(false);
+            EnableMovement();
+        }
         
     }
 
@@ -116,8 +113,9 @@ public class Interaction : MonoBehaviour
             }
             dialogueBox.SetActive(true);
             conversation.SetActive(true);
-            Conversation();
+           
             speak = true;
+            
             if (!speak)
             {
                 animator.SetFloat("Speed", 0);
@@ -131,7 +129,7 @@ public class Interaction : MonoBehaviour
                 }
 
             }
-            if (this.name == "altare")
+            else if (this.name == "altare")
             {
                 GameObject.Find("collideruscita").GetComponent<BoxCollider2D>().enabled = true;
                 GameObject.Find("colliderToEnter(Tempio)").GetComponent<BoxCollider2D>().enabled = false;
@@ -150,21 +148,20 @@ public class Interaction : MonoBehaviour
 
         if (dialogue == conversation.transform.childCount)
         {
-            
             move = false;
-            speak = false;
+            firstMove = false;
             dialogueBox.SetActive(false);
             conversation.SetActive(false);
-            firstMove = false;
             finish = true;
             continueDialogueButton.GetComponent<CanvasGroup>().alpha = 0f;
             continueDialogueButton.GetComponent<CanvasGroup>().interactable = false;
-           
+            child.GetComponent<CanvasGroup>().alpha = 0f;
+            child.GetComponent<CanvasGroup>().blocksRaycasts = false;
         }
         
     }
 
-    void SetMovement()
+    void EnableMovement()
     {
         player.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
         player.GetComponent<Animator>().enabled = true;
