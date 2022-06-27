@@ -133,6 +133,8 @@ public class Interaction : MonoBehaviour
             {
                 GameObject.Find("collideruscita").GetComponent<BoxCollider2D>().enabled = true;
                 GameObject.Find("colliderToEnter(Tempio)").GetComponent<BoxCollider2D>().enabled = false;
+                GameObject.Find("esben2").GetComponent<SpriteRenderer>().enabled = true;
+                GameObject.Find("esben2").GetComponent<BoxCollider2D>().enabled = true;
 
             }
         }
