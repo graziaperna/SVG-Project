@@ -48,12 +48,11 @@ public class InventorySystem : MonoBehaviour
         }
     }
 
-    protected void addItem()
+    public void addItem()
     {
         scaleChange = new Vector3(7f, 7f, 7f);
-        gameObject.transform.localScale = scaleChange;
-        gameObject.transform.position = new Vector3(transform.position.x, transform.position.y, -382);
         GameObject newSlot = Instantiate(slot, Inventory.transform);
+       
     }
 
 

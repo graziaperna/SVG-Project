@@ -18,10 +18,14 @@ public class Interaction : MonoBehaviour
     public Collider2D  NPC_collision;
     public GameObject dialogueBox;
     public GameObject conversation;
+    public GameObject gObjInv;
+    public GameObject InventoryBox;
+    public GameObject slotGObjToGive;
     public bool finish = false;
     private int dialogue = 0;
     private Transform child;
     public UnityEngine.UI.Button continueDialogueButton;
+    InventorySystem inventory;
 
     // Start is called before the first frame update
     void Start()
@@ -35,8 +39,9 @@ public class Interaction : MonoBehaviour
             destinationPosition.x = destinationPosition.x + 0.2f;
             movement = new Vector3(-1, 0, 0);
             continueDialogueButton.onClick.AddListener(TaskOnClick);
+            
         }
-        
+        inventory = gObjInv.GetComponent<InventorySystem>();
 
     }
 
@@ -48,9 +53,8 @@ public class Interaction : MonoBehaviour
         }
         if (speak)
         {
-                destinationPosition = destination.transform.position;
-                Speak();
-            
+            destinationPosition = destination.transform.position;
+            Speak();
         }
         
         
@@ -123,10 +127,9 @@ public class Interaction : MonoBehaviour
             if (this.name == "esben2")
             {
                 GameObject.Find("colliderToEnter(Taverna)").GetComponent<BoxCollider2D>().enabled = true;
-                if (GameObject.Find("fiaccola") != null)
-                {
-                    GameObject.Find("fiaccola").GetComponent<BoxCollider2D>().enabled = true;
-                }
+                inventory.slot = slotGObjToGive;
+                inventory.Inventory = InventoryBox;
+                inventory.addItem();
 
             }
             else if (this.name == "altare")
@@ -197,6 +200,16 @@ public class Interaction : MonoBehaviour
             child.GetComponent<CanvasGroup>().blocksRaycasts = true;
         }
         else if (dialogue == 5)
+        {
+            child.GetComponent<CanvasGroup>().alpha = 1f;
+            child.GetComponent<CanvasGroup>().blocksRaycasts = true;
+        }
+        else if (dialogue == 6)
+        {
+            child.GetComponent<CanvasGroup>().alpha = 1f;
+            child.GetComponent<CanvasGroup>().blocksRaycasts = true;
+        }
+        else if (dialogue == 7)
         {
             child.GetComponent<CanvasGroup>().alpha = 1f;
             child.GetComponent<CanvasGroup>().blocksRaycasts = true;
