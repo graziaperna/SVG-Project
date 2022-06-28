@@ -15,7 +15,7 @@ public class Interaction : MonoBehaviour
     public bool move = false;
     public Animator animator;
     float speed = 1f;
-    public Collider2D  NPC_collision;
+    public Collider2D NPC_collision;
     public GameObject dialogueBox;
     public GameObject conversation;
     public GameObject gObjInv;
@@ -39,15 +39,16 @@ public class Interaction : MonoBehaviour
             destinationPosition.x = destinationPosition.x + 0.2f;
             movement = new Vector3(-1, 0, 0);
             continueDialogueButton.onClick.AddListener(TaskOnClick);
-            
+
         }
+
         inventory = gObjInv.GetComponent<InventorySystem>();
 
     }
 
     void Update() {
-        
-        if(move||firstMove) {
+
+        if (move || firstMove) {
             Move();
 
         }
@@ -56,18 +57,18 @@ public class Interaction : MonoBehaviour
             destinationPosition = destination.transform.position;
             Speak();
         }
-        
-        
+
+
     }
 
 
     void Move() {
 
-     transform.position = Vector3.MoveTowards(transform.position, destinationPosition, speed* Time.deltaTime);
-     animator.SetFloat("Horizontal", movement.x);
-     animator.SetFloat("Vertical", movement.y);
-     animator.SetFloat("Speed",  transform.position.sqrMagnitude);
-        
+        transform.position = Vector3.MoveTowards(transform.position, destinationPosition, speed * Time.deltaTime);
+        animator.SetFloat("Horizontal", movement.x);
+        animator.SetFloat("Vertical", movement.y);
+        animator.SetFloat("Speed", transform.position.sqrMagnitude);
+
         destination.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
         destination.GetComponent<Animator>().enabled = false;
 
@@ -76,13 +77,13 @@ public class Interaction : MonoBehaviour
             {
                 child = conversation.transform.GetChild(dialogue);
             }
-            animator.SetFloat("Speed",  0);
+            animator.SetFloat("Speed", 0);
             dialogueBox.SetActive(true);
             conversation.SetActive(true);
-            Conversation();  
+            Conversation();
 
-     }
-     
+        }
+
 
     }
 
@@ -94,11 +95,18 @@ public class Interaction : MonoBehaviour
             Conversation();
         } else
         {
+            if (this.name == "harald")
+            {
+
+                Interaction interactionHarald = this.GetComponent<Interaction>();
+                interactionHarald.speak = false;
+
+            }
             dialogueBox.SetActive(false);
             conversation.SetActive(false);
             EnableMovement();
         }
-        
+
     }
 
 
@@ -117,9 +125,9 @@ public class Interaction : MonoBehaviour
             }
             dialogueBox.SetActive(true);
             conversation.SetActive(true);
-           
+
             speak = true;
-            
+
             if (!speak)
             {
                 animator.SetFloat("Speed", 0);
@@ -140,8 +148,14 @@ public class Interaction : MonoBehaviour
                 GameObject.Find("esben2").GetComponent<BoxCollider2D>().enabled = true;
 
             }
+            else if (this.name == "harald")
+            {
+
+            }
+
         }
     }
+
 
     void TaskOnClick()
     {
