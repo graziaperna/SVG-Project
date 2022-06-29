@@ -10,6 +10,8 @@ public class NPCBehavior : MonoBehaviour
     public float speed = 1f;
     public bool canMove;
     public bool firstMove;
+    public bool moveUpDown = false;
+    public bool moveLeftRight = false;
     public Animator animator;
     public Vector3 movement;
 
@@ -34,18 +36,35 @@ public class NPCBehavior : MonoBehaviour
         {
             if (firstMove)
             {
-                transform.position = Vector3.MoveTowards(transform.position, targetPos1, speed* Time.deltaTime);
-                animator.SetFloat("Horizontal", movement.x);
-                animator.SetFloat("Speed",  transform.position.sqrMagnitude);
+                if(moveLeftRight) {
+                    transform.position = Vector3.MoveTowards(transform.position, targetPos1, speed* Time.deltaTime);
+                    animator.SetFloat("Horizontal", movement.x);
+                    animator.SetFloat("Speed",  transform.position.sqrMagnitude);
+                }
+                else {
+                    transform.position = Vector3.MoveTowards(transform.position, targetPos1, speed* Time.deltaTime);
+                    animator.SetFloat("Vertical", movement.y);
+                    animator.SetFloat("Speed",  transform.position.sqrMagnitude);
+                }
               
             }
             else
             {      
-                transform.position = Vector3.MoveTowards(transform.position, targetPos2, speed* Time.deltaTime);
-                movement = transform.position;
-                animator.SetFloat("Horizontal", movement.x);
-                animator.SetFloat("Speed", transform.position.sqrMagnitude);
-                movement.x = movement.x * -1;
+                if(moveLeftRight) {
+                    transform.position = Vector3.MoveTowards(transform.position, targetPos2, speed* Time.deltaTime);
+                    movement = transform.position;
+                     animator.SetFloat("Horizontal", movement.x);
+                    animator.SetFloat("Speed", transform.position.sqrMagnitude);
+                    movement.x = movement.x * -1;
+                }
+                else {
+                    transform.position = Vector3.MoveTowards(transform.position, targetPos2, speed* Time.deltaTime);
+                    movement = transform.position;
+                    animator.SetFloat("Vertical", movement.x);
+                    animator.SetFloat("Speed", transform.position.sqrMagnitude);
+                    movement.y = movement.y * -1;
+
+                }
 
                 
             }
