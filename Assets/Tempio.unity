@@ -381,8 +381,12 @@ MonoBehaviour:
   NPC_collision: {fileID: 56591099}
   dialogueBox: {fileID: 711971897}
   conversation: {fileID: 1491910036}
+  gObjInv: {fileID: 0}
+  InventoryBox: {fileID: 0}
+  slotGObjToGive: {fileID: 0}
   finish: 0
   continueDialogueButton: {fileID: 334286533}
+  give: 0
 --- !u!1001 &69027379
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -24978,7 +24982,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2894230590495991267, guid: ac25afef3790bbc48bd0b15859949e37, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2894230590495991267, guid: ac25afef3790bbc48bd0b15859949e37, type: 3}
       propertyPath: m_Offset.x
@@ -26500,6 +26504,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 328514502}
     - target: {fileID: 219120872185481639, guid: f5537af6c923e16439217cf45e09bf08, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 219120872185481639, guid: f5537af6c923e16439217cf45e09bf08, type: 3}
       propertyPath: dialogueBox
       value: 
       objectReference: {fileID: 711971897}
@@ -26508,6 +26516,30 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1491910036}
     - target: {fileID: 219120872185481639, guid: f5537af6c923e16439217cf45e09bf08, type: 3}
+      propertyPath: continueDialogueButton
+      value: 
+      objectReference: {fileID: 334286533}
+    - target: {fileID: 566372766603517485, guid: f5537af6c923e16439217cf45e09bf08, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 328514497}
+    - target: {fileID: 566372766603517485, guid: f5537af6c923e16439217cf45e09bf08, type: 3}
+      propertyPath: destination
+      value: 
+      objectReference: {fileID: 328514497}
+    - target: {fileID: 566372766603517485, guid: f5537af6c923e16439217cf45e09bf08, type: 3}
+      propertyPath: dialogueBox
+      value: 
+      objectReference: {fileID: 711971897}
+    - target: {fileID: 566372766603517485, guid: f5537af6c923e16439217cf45e09bf08, type: 3}
+      propertyPath: conversation
+      value: 
+      objectReference: {fileID: 1491910036}
+    - target: {fileID: 566372766603517485, guid: f5537af6c923e16439217cf45e09bf08, type: 3}
+      propertyPath: NPC_collision
+      value: 
+      objectReference: {fileID: 328514507}
+    - target: {fileID: 566372766603517485, guid: f5537af6c923e16439217cf45e09bf08, type: 3}
       propertyPath: continueDialogueButton
       value: 
       objectReference: {fileID: 334286533}
@@ -28108,8 +28140,12 @@ MonoBehaviour:
   NPC_collision: {fileID: 328514507}
   dialogueBox: {fileID: 711971897}
   conversation: {fileID: 1387845219}
+  gObjInv: {fileID: 0}
+  InventoryBox: {fileID: 0}
+  slotGObjToGive: {fileID: 0}
   finish: 0
   continueDialogueButton: {fileID: 334286533}
+  give: 0
 --- !u!1 &1491910036
 GameObject:
   m_ObjectHideFlags: 0

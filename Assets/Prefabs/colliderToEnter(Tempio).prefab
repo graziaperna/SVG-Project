@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2580307974681600998}
   m_Layer: 0
   m_Name: colliderToEnter(Tempio)
-  m_TagString: Untagged
+  m_TagString: disableColliderTempio
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -44,7 +44,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -58,7 +58,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 3.0386362, y: 0.92347425}
+  m_Size: {x: 3.6040273, y: 0.92347425}
   m_EdgeRadius: 0
 --- !u!114 &5819375304593969496
 MonoBehaviour:

@@ -5,7 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class DontDestroy : MonoBehaviour
 {
-    private int nclip = 0;
     private GameObject musicObj;
     MusicManager musicMan;
     private GameObject music;

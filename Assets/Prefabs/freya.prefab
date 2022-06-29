@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2551605266051565968}
   - component: {fileID: 6141514012728187432}
   - component: {fileID: 2577575292616587250}
-  - component: {fileID: 219120872185481639}
+  - component: {fileID: 566372766603517485}
   m_Layer: 0
   m_Name: freya
   m_TagString: Untagged
@@ -155,7 +155,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.68, y: 0.91}
   m_EdgeRadius: 0
---- !u!114 &219120872185481639
+--- !u!114 &566372766603517485
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -164,10 +164,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 3339809281392550390}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cf531989aec220a438606e1576dea3f5, type: 3}
+  m_Script: {fileID: 11500000, guid: cb2ba42d5c3761241bd97c65b6009af8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  continueDialogueButton: {fileID: 0}
+  firstMove: 1
+  speak: 0
+  destination: {fileID: 0}
+  player: {fileID: 0}
+  move: 0
+  animator: {fileID: 2551605266051565968}
+  NPC_collision: {fileID: 0}
   dialogueBox: {fileID: 0}
   conversation: {fileID: 0}
-  aren: {fileID: 0}
+  gObjInv: {fileID: 0}
+  InventoryBox: {fileID: 0}
+  slotGObjToGive: {fileID: 0}
+  finish: 0
+  continueDialogueButton: {fileID: 0}
+  give: 0

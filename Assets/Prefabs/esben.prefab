@@ -154,10 +154,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb2ba42d5c3761241bd97c65b6009af8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  firstMove: 0
+  speak: 0
   destination: {fileID: 7495979232166552842, guid: 873bc09e4c965dd469c98ffbbfa31170, type: 3}
+  player: {fileID: 0}
+  move: 0
   animator: {fileID: 1699427813372469496}
+  NPC_collision: {fileID: 0}
   dialogueBox: {fileID: 0}
   conversation: {fileID: 0}
+  gObjInv: {fileID: 0}
+  InventoryBox: {fileID: 0}
+  slotGObjToGive: {fileID: 0}
+  finish: 0
   continueDialogueButton: {fileID: 0}
 --- !u!61 &8140975600254458184
 BoxCollider2D:
@@ -172,7 +181,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.009782791, y: -0.07976113}
+  m_Offset: {x: -0.0009787325, y: -0.07976115}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -183,5 +192,5 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.214317, y: 0.69199}
+  m_Size: {x: 0.12235451, y: 0.69199}
   m_EdgeRadius: 0
