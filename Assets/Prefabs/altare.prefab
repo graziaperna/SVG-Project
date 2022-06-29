@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 742184148809429697}
   - component: {fileID: 742184148809429696}
+  - component: {fileID: 927258246998789163}
+  - component: {fileID: 4067142131468333877}
   m_Layer: 0
   m_Name: altare
   m_TagString: Untagged
@@ -71,7 +73,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1764555669
-  m_SortingLayer: 1
+  m_SortingLayer: -2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 15b2a6adc8469ef46a7a4dd7ea6ae520, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -84,3 +86,33 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &927258246998789163
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 742184148809429703}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b1fe7b4203ac934ababc3591ac11af1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Delimiters: {fileID: 4382729485077897962, guid: f43b4d9486d0c304e84effaa91b21ce4, type: 3}
+  activable: 1
+  disactivable: 0
+--- !u!114 &4067142131468333877
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 742184148809429703}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b1fe7b4203ac934ababc3591ac11af1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Delimiters: {fileID: 5819375304593969500, guid: eed8764809d74e3489d98e5ffbe79dbc, type: 3}
+  activable: 0
+  disactivable: 1

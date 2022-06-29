@@ -26,29 +26,39 @@ public class Interaction : MonoBehaviour
     private Transform child;
     public UnityEngine.UI.Button continueDialogueButton;
     InventorySystem inventory;
+    public bool give = false;
 
     // Start is called before the first frame update
     void Start()
     {
         if (firstMove)
         {
-            destination.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
-            destination.GetComponent<Animator>().enabled = false;
+            if(this.name == "esben") {
+                destination.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
+                destination.GetComponent<Animator>().enabled = false;
 
-            destinationPosition = destination.transform.position;
-            destinationPosition.x = destinationPosition.x + 0.2f;
-            movement = new Vector3(-1, 0, 0);
-            continueDialogueButton.onClick.AddListener(TaskOnClick);
+                destinationPosition = destination.transform.position;
+                destinationPosition.x = destinationPosition.x + 0.2f;
+                movement = new Vector3(-1, 0, 0);
+                continueDialogueButton.onClick.AddListener(TaskOnClick);
+            } else if(this.name == "freya")
+            {
+                SetTheConversation();
+            }
+            
 
         }
-
-        inventory = gObjInv.GetComponent<InventorySystem>();
+ 
+        if (give)
+        {
+            inventory = gObjInv.GetComponent<InventorySystem>();
+        }
 
     }
 
     void Update() {
 
-        if (move || firstMove) {
+        if ((move || firstMove) && this.name == "esben") {
             Move();
 
         }
@@ -56,10 +66,40 @@ public class Interaction : MonoBehaviour
         {
             destinationPosition = destination.transform.position;
             Speak();
+           
+     /*       if(this.name == "altare")
+            {
+                GameObject obj1 = GameObject.FindWithTag("disableColliderTempio");
+                obj1.GetComponent<BoxCollider2D>().enabled = false;
+
+                GameObject obj2 = GameObject.FindWithTag("esben2");
+                obj2.GetComponent<SpriteRenderer>().enabled = true;
+                obj2.GetComponent<BoxCollider2D>().enabled = true;
+
+            }*/
         }
 
 
     }
+
+
+    static GameObject FindByName(string goName)
+    {
+        GameObject go = null;
+
+        foreach (GameObject obj in Resources.FindObjectsOfTypeAll(typeof(GameObject)) as GameObject[])
+        {
+            if (obj.name.Equals(goName))
+            {
+                Debug.Log(obj.name);
+                go = obj;
+                return go;
+            }
+        }
+
+        return null;
+    }
+
 
 
     void Move() {
@@ -87,6 +127,7 @@ public class Interaction : MonoBehaviour
 
     }
 
+
     void Speak()
     {
         if (!finish)
@@ -95,13 +136,21 @@ public class Interaction : MonoBehaviour
             Conversation();
         } else
         {
-            if (this.name == "harald")
+           
+            Interaction interaction = this.GetComponent<Interaction>();
+
+            if (speak)
             {
-
-                Interaction interactionHarald = this.GetComponent<Interaction>();
-                interactionHarald.speak = false;
-
+                interaction.speak = false;
+            } else if(move)
+            {
+                interaction.move = false;
             }
+            else if (firstMove)
+            {
+                interaction.firstMove = false;
+            }
+
             dialogueBox.SetActive(false);
             conversation.SetActive(false);
             EnableMovement();
@@ -109,50 +158,58 @@ public class Interaction : MonoBehaviour
 
     }
 
+    void SetTheConversation()
+    {
+        destination.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
+        destination.GetComponent<Animator>().enabled = false;
+        continueDialogueButton.onClick.AddListener(TaskOnClick);
+
+        if (dialogue < conversation.transform.childCount)
+        {
+            child = conversation.transform.GetChild(dialogue);
+        }
+        dialogueBox.SetActive(true);
+        conversation.SetActive(true);
+
+        speak = true;
+        move = false;
+        firstMove = false;
+
+        if (!speak)
+        {
+            animator.SetFloat("Speed", 0);
+        }
+        if (this.name == "esben2")
+        {
+            GameObject obj1 = GameObject.FindWithTag("enableColliderTaverna");
+            obj1.GetComponent<BoxCollider2D>().enabled = true;
+            inventory.slot = slotGObjToGive;
+            inventory.Inventory = InventoryBox;
+            inventory.addItem();
+
+        }
+        else if (this.name == "altare")
+        {
+            GameObject obj1 = GameObject.FindWithTag("disableColliderTempio");
+            obj1.GetComponent<BoxCollider2D>().enabled = false;
+
+            GameObject obj2 = GameObject.FindWithTag("esben2");
+            obj2.GetComponent<SpriteRenderer>().enabled = true;
+            obj2.GetComponent<BoxCollider2D>().enabled = true;
+
+        }
+        else if (this.name == "harald")
+        {
+
+        }
+    }
 
     void OnTriggerEnter2D(Collider2D other)
     {
 
         if (other.name == NPC_collision.name)
         {
-            destination.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
-            destination.GetComponent<Animator>().enabled = false;
-            continueDialogueButton.onClick.AddListener(TaskOnClick);
-
-            if (dialogue < conversation.transform.childCount)
-            {
-                child = conversation.transform.GetChild(dialogue);
-            }
-            dialogueBox.SetActive(true);
-            conversation.SetActive(true);
-
-            speak = true;
-
-            if (!speak)
-            {
-                animator.SetFloat("Speed", 0);
-            }
-            if (this.name == "esben2")
-            {
-                GameObject.Find("colliderToEnter(Taverna)").GetComponent<BoxCollider2D>().enabled = true;
-                inventory.slot = slotGObjToGive;
-                inventory.Inventory = InventoryBox;
-                inventory.addItem();
-
-            }
-            else if (this.name == "altare")
-            {
-                GameObject.Find("collideruscita").GetComponent<BoxCollider2D>().enabled = true;
-                GameObject.Find("colliderToEnter(Tempio)").GetComponent<BoxCollider2D>().enabled = false;
-                GameObject.Find("esben2").GetComponent<SpriteRenderer>().enabled = true;
-                GameObject.Find("esben2").GetComponent<BoxCollider2D>().enabled = true;
-
-            }
-            else if (this.name == "harald")
-            {
-
-            }
-
+            SetTheConversation();
         }
     }
 
