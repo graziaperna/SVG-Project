@@ -201,6 +201,10 @@ PrefabInstance:
       value: fiaccola
       objectReference: {fileID: 0}
     - target: {fileID: 4999481168778504180, guid: 2109e0518f839a94fa5ee3940ddd4cf4, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4999481168778504180, guid: 2109e0518f839a94fa5ee3940ddd4cf4, type: 3}
       propertyPath: m_SortingLayer
       value: -1
       objectReference: {fileID: 0}
