@@ -194,3 +194,4 @@ MonoBehaviour:
   slotGObjToGive: {fileID: 3368288272056216623, guid: 0a25b623c8e52d24888e3d5c0ac61995, type: 3}
   finish: 0
   continueDialogueButton: {fileID: 0}
+  give: 0

@@ -66,17 +66,7 @@ public class Interaction : MonoBehaviour
         {
             destinationPosition = destination.transform.position;
             Speak();
-           
-     /*       if(this.name == "altare")
-            {
-                GameObject obj1 = GameObject.FindWithTag("disableColliderTempio");
-                obj1.GetComponent<BoxCollider2D>().enabled = false;
-
-                GameObject obj2 = GameObject.FindWithTag("esben2");
-                obj2.GetComponent<SpriteRenderer>().enabled = true;
-                obj2.GetComponent<BoxCollider2D>().enabled = true;
-
-            }*/
+    
         }
 
 
@@ -200,7 +190,8 @@ public class Interaction : MonoBehaviour
         }
         else if (this.name == "harald")
         {
-
+            GameObject obj1 = GameObject.FindWithTag("enableDiary");
+            obj1.GetComponent<CanvasGroup>().interactable = true;
         }
     }
 
