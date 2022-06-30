@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8290435799107777215}
   - component: {fileID: 8290435799107777209}
   - component: {fileID: 8290435799107777208}
+  - component: {fileID: 6452665630046300454}
   m_Layer: 0
   m_Name: colliderentrata
   m_TagString: enableColliderTaverna
@@ -72,4 +73,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SceneNumber: 2
-  changed: 1
+--- !u!114 &6452665630046300454
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8290435799107777212}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41f84cb6082f6da4e9860477cc0fefd4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

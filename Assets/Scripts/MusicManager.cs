@@ -10,16 +10,29 @@ public class MusicManager : MonoBehaviour
     private int storyPoint;
     private GameObject musicGameObj;
     private string nameScene = "Intro";
+    public bool sceneChanged = true;
+    public int eventHappened = 0;
+    private int lastEventHappened = 0;
 
     // Start is called before the first frame update
    
     // Update is called once per frame
     void Update()
     {
-        if (SceneManager.GetActiveScene().name != nameScene)
+        if (sceneChanged)
         {
-            musicToChange = true;
-            nameScene = SceneManager.GetActiveScene().name;
+            if (SceneManager.GetActiveScene().name != nameScene)
+            {
+                musicToChange = true;
+                nameScene = SceneManager.GetActiveScene().name;
+            }
+        } else
+        {
+            if (eventHappened != lastEventHappened)
+            {
+                musicToChange = true;
+                lastEventHappened = eventHappened;
+            }
         }
     }
 

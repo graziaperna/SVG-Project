@@ -39,8 +39,6 @@ public class Button : MonoBehaviour
     }
     public void GoOn()
     {
-        scena = objectEvent.GetComponent<CambioScena>();
-        scena.setChanged(true);
         SceneManager.LoadScene(2);
     }
 
