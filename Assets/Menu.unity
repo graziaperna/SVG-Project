@@ -387,6 +387,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectEvent: {fileID: 2894230590495991260, guid: ac25afef3790bbc48bd0b15859949e37, type: 3}
+  slot: 0
 --- !u!1 &885415626
 GameObject:
   m_ObjectHideFlags: 0
@@ -1273,7 +1274,11 @@ MonoBehaviour:
   clip:
   - {fileID: 8300000, guid: bbe465eb8048ab14ebd572184ab7b023, type: 3}
   - {fileID: 8300000, guid: a9a2d9581d370ee41a09bb7112cbf14f, type: 3}
+  - {fileID: 8300000, guid: 571383749d1af574db9fbb99a113b4a5, type: 3}
+  - {fileID: 8300000, guid: 91609554fe0383e4ab956e319739f887, type: 3}
   musicToChange: 0
+  sceneChanged: 1
+  eventHappened: 0
 --- !u!1001 &5184943205699574263
 PrefabInstance:
   m_ObjectHideFlags: 0

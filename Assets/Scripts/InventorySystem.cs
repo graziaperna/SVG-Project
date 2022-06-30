@@ -16,12 +16,12 @@ public class InventorySystem : MonoBehaviour
     private Vector3 scaleChange;
     public GameObject slot;
     private UnityEngine.UI.Text added;
-    float tempo = 0;
+    public float tempo = 0;
 
     protected virtual void Start()
     {
         boxCollider = GetComponent<BoxCollider2D>();
-        added = GameObject.FindWithTag("addedItem").GetComponent<UnityEngine.UI.Text>();
+
         for (int i = 0; i < 11; i++)
         {
             empty[i] = true;
@@ -29,17 +29,23 @@ public class InventorySystem : MonoBehaviour
 
     }
 
-    protected virtual void Update()
+    public void ManageTime()
     {
-        tempo += Time.deltaTime; 
-        //Collision work
-        boxCollider.OverlapCollider(filter, hits);
+        added = GameObject.FindWithTag("addedItem").GetComponent<UnityEngine.UI.Text>();
+        tempo += Time.deltaTime;
 
         if (tempo >= 2f)
         {
             added.GetComponent<CanvasGroup>().alpha = 0f;
             tempo = 0f;
         }
+    }
+
+    protected virtual void Update()
+    {
+        ManageTime();
+        //Collision work
+        boxCollider.OverlapCollider(filter, hits);
 
         for (int i = 0; i < hits.Length; i++)
         {
@@ -60,10 +66,12 @@ public class InventorySystem : MonoBehaviour
     
     public void addItem()
     {
+        added = GameObject.FindWithTag("addedItem").GetComponent<UnityEngine.UI.Text>();
         scaleChange = new Vector3(7f, 7f, 7f);
         GameObject newSlot = Instantiate(slot, Inventory.transform);
+
+        tempo = 0f;
         added.GetComponent<CanvasGroup>().alpha = 1f;
-       
 
     }
 

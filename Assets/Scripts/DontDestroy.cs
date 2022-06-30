@@ -35,17 +35,25 @@ public class DontDestroy : MonoBehaviour
     {
         if (musicMan.musicToChange)
         {
-            if (SceneManager.GetActiveScene().name == "SampleScene")
+            if (musicMan.sceneChanged) { 
+                if (SceneManager.GetActiveScene().name == "SampleScene")
+                {
+                    musicMan.changeMusic(0);
+                }
+                else if (SceneManager.GetActiveScene().name == "Tempio")
+                {
+                    musicMan.changeMusic(1);
+                }
+                else if (SceneManager.GetActiveScene().name == "Casa Baba")
+                {
+                    musicMan.changeMusic(2);
+                }
+            } else
             {
-                musicMan.changeMusic(0);
-            }
-            else if (SceneManager.GetActiveScene().name == "Tempio")
-            {
-                musicMan.changeMusic(1);
-            }
-            else if (SceneManager.GetActiveScene().name == "Casa Baba")
-            {
-                musicMan.changeMusic(2);
+                if(musicMan.eventHappened == 1)
+                {
+                    musicMan.changeMusic(3);
+                }
             }
         }
     }

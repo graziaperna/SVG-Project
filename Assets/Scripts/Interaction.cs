@@ -27,6 +27,7 @@ public class Interaction : MonoBehaviour
     public UnityEngine.UI.Button continueDialogueButton;
     InventorySystem inventory;
     public bool give = false;
+    private float tempo = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -57,6 +58,12 @@ public class Interaction : MonoBehaviour
     }
 
     void Update() {
+
+        if (give)
+        {
+            inventory.ManageTime();
+        }
+
 
         if ((move || firstMove) && this.name == "esben") {
             Move();
@@ -173,8 +180,10 @@ public class Interaction : MonoBehaviour
         {
             GameObject obj1 = GameObject.FindWithTag("enableColliderTaverna");
             obj1.GetComponent<BoxCollider2D>().enabled = true;
+
             inventory.slot = slotGObjToGive;
             inventory.Inventory = InventoryBox;
+            inventory.tempo = tempo;
             inventory.addItem();
 
         }
