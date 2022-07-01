@@ -7,13 +7,17 @@ using UnityEngine.UI;
 public class Button : MonoBehaviour
 {
     CambioScena scena;
-    public GameObject objectEvent;
     private Transform child;
     private UnityEngine.UI.Button buttonInventorySlot;
     public bool slot = false;
     private GameObject obj2;
+    private bool musicPlaying = true;
+    MusicManager musicMan;
+    private GameObject music;
+
     public void Start()
     {
+
         if (slot) {
 
             buttonInventorySlot = GameObject.FindWithTag("slotFiaccola").GetComponent<UnityEngine.UI.Button>();
@@ -35,7 +39,7 @@ public class Button : MonoBehaviour
 
     public void Exit()
     {
-
+        Application.Quit();
     }
     public void GoOn()
     {
@@ -52,6 +56,17 @@ public class Button : MonoBehaviour
         }
 
         obj2.GetComponent<SpriteRenderer>().enabled = true;
+        obj2.GetComponent<BoxCollider2D>().enabled = true;
         Destroy(buttonInventorySlot.gameObject);
+    }
+
+    public void volume()
+    {
+        music = GameObject.FindWithTag("music");
+        musicMan = music.GetComponent<MusicManager>();
+        
+        musicMan.stopOrPlay(musicPlaying);
+        
+        musicPlaying = !musicPlaying;
     }
 }

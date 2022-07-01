@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5564469258641261697}
   - component: {fileID: 5712329335009436614}
   - component: {fileID: 4973600966838815745}
+  - component: {fileID: 5437975472913579042}
   - component: {fileID: 4475454279413930911}
   m_Layer: 0
   m_Name: npc3
@@ -28,11 +29,11 @@ Transform:
   m_GameObject: {fileID: 1812797962116004953}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 4.928, y: 9.291, z: 0}
-  m_LocalScale: {x: 0.25619647, y: 0.20339818, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.3, y: 0.2492485, z: 1.1286302}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &5712329335009436614
 SpriteRenderer:
@@ -103,16 +104,37 @@ Rigidbody2D:
   m_AngularDrag: 0.05
   m_GravityScale: 1
   m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &5437975472913579042
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1812797962116004953}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb2ba42d5c3761241bd97c65b6009af8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  firstMove: 0
+  speak: 0
+  destination: {fileID: 0}
+  player: {fileID: 0}
+  move: 0
+  animator: {fileID: 0}
+  NPC_collision: {fileID: 0}
+  dialogueBox: {fileID: 0}
+  conversation: {fileID: 0}
+  gObjInv: {fileID: 0}
+  InventoryBox: {fileID: 0}
+  slotGObjToGive: {fileID: 0}
+  finish: 0
+  continueDialogueButton: {fileID: 0}
+  give: 0
 --- !u!61 &4475454279413930911
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -123,25 +145,6 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0

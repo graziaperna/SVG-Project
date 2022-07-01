@@ -34,7 +34,7 @@ public class InventorySystem : MonoBehaviour
         added = GameObject.FindWithTag("addedItem").GetComponent<UnityEngine.UI.Text>();
         tempo += Time.deltaTime;
 
-        if (tempo >= 2f)
+        if (tempo >= 4f)
         {
             added.GetComponent<CanvasGroup>().alpha = 0f;
             tempo = 0f;

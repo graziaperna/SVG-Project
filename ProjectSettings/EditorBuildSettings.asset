@@ -26,4 +26,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/CasaBaba.unity
     guid: 210801415e23a0845856cba0a12d5fab
+  - enabled: 1
+    path: Assets/FinalScene.unity
+    guid: d87df39a2ab2e0d46b7443a023dcd3a4
   m_configObjects: {}

@@ -13,6 +13,7 @@ public class MusicManager : MonoBehaviour
     public bool sceneChanged = true;
     public int eventHappened = 0;
     private int lastEventHappened = 0;
+    
 
     // Start is called before the first frame update
    
@@ -43,5 +44,9 @@ public class MusicManager : MonoBehaviour
         musicToChange = false;
     }
     
+    public void stopOrPlay(bool music)
+    {
+        GetComponent<AudioSource>().mute = music;
+    }
    
 }
