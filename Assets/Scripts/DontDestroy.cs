@@ -18,12 +18,13 @@ public class DontDestroy : MonoBehaviour
     void Awake()
     {
         GameObject[] objs = GameObject.FindGameObjectsWithTag("aren");
-       
+        GameObject[] objs1 = GameObject.FindGameObjectsWithTag("aren");
+
         music = GameObject.FindWithTag("music");
 
         musicMan = music.GetComponent<MusicManager>();
 
-        if (objs.Length > 1)
+        if (objs.Length > 1 || objs1.Length > 1)
         {
             Destroy(this.gameObject);
         }
@@ -53,6 +54,10 @@ public class DontDestroy : MonoBehaviour
                 if(musicMan.eventHappened == 1)
                 {
                     musicMan.changeMusic(3);
+                }
+                if (musicMan.eventHappened == 2)
+                {
+                    musicMan.changeMusic(4);
                 }
             }
         }

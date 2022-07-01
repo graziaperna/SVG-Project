@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 69013367815603762}
   - component: {fileID: 69013367815603791}
   - component: {fileID: 69013367815603760}
+  - component: {fileID: 2479911192493362637}
   m_Layer: 0
   m_Name: npc5
   m_TagString: Untagged
@@ -28,8 +29,8 @@ Transform:
   m_GameObject: {fileID: 69013367815603763}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 6.532, y: 8.953, z: 0}
-  m_LocalScale: {x: 0.19416368, y: 0.18087532, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.3, y: 0.26204798, z: 1.3332138}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 9
@@ -103,12 +104,6 @@ Rigidbody2D:
   m_AngularDrag: 0.05
   m_GravityScale: 1
   m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
@@ -123,25 +118,6 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -158,3 +134,30 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.68, y: 0.91}
   m_EdgeRadius: 0
+--- !u!114 &2479911192493362637
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 69013367815603763}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb2ba42d5c3761241bd97c65b6009af8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  firstMove: 0
+  speak: 0
+  destination: {fileID: 0}
+  player: {fileID: 0}
+  move: 0
+  animator: {fileID: 0}
+  NPC_collision: {fileID: 0}
+  dialogueBox: {fileID: 0}
+  conversation: {fileID: 0}
+  gObjInv: {fileID: 0}
+  InventoryBox: {fileID: 0}
+  slotGObjToGive: {fileID: 0}
+  finish: 0
+  continueDialogueButton: {fileID: 0}
+  give: 0

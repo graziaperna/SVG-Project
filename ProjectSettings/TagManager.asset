@@ -10,6 +10,10 @@ TagManager:
   - esben2
   - enableColliderTaverna
   - disableColliderTempio
+  - enableDiary
+  - addedItem
+  - fiaccola
+  - slotFiaccola
   layers:
   - Default
   - TransparentFX
@@ -53,14 +57,14 @@ TagManager:
   - name: oggetti
     uniqueID: 2530411627
     locked: 0
+  - name: npc
+    uniqueID: 1607201225
+    locked: 0
   - name: personaggi
     uniqueID: 1594795057
     locked: 0
   - name: Default
     uniqueID: 0
-    locked: 0
-  - name: npc
-    uniqueID: 1607201225
     locked: 0
   - name: casa
     uniqueID: 3670585683

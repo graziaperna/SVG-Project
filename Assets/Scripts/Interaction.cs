@@ -201,6 +201,16 @@ public class Interaction : MonoBehaviour
         {
             GameObject obj1 = GameObject.FindWithTag("enableDiary");
             obj1.GetComponent<CanvasGroup>().interactable = true;
+
+            GameObject obj2 = GameObject.FindWithTag("enableColliderTaverna");
+            obj2.GetComponent<BoxCollider2D>().enabled = false;
+
+            GameObject[] obj3 = GameObject.FindGameObjectsWithTag("attivatoreDelim");
+
+            for (int i = 0; i < obj3.Length; i++)
+            {
+                obj3[i].SetActive(false);
+            }
         }
     }
 
